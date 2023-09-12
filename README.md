@@ -12,6 +12,12 @@
 
 **Full opened project size:** `15GB`
 
+## What is this for?
+
+This is for blueprint modding, when you are making a mod that needs to get references to various game assets. It completely removes the need to recreate any assets by hand which is usually very time consuming.
+
+Therefore, you need to know how to make BP mods in the first place, which you can find out more about in the [BP Modding guide](https://mod.io/g/drg/r/how-to-blueprint-mod).
+
 ## Usage
 
 1. Unzip the modkit files into a folder name of your choice.
