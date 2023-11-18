@@ -1,22 +1,28 @@
 # DRG Community Modkit Project
 
-## [Download](https://drive.google.com/file/d/1_7lOUkByxW4407ws0l08kVjPNRfIRdRD/view?usp=sharing)
+## [Download](https://drive.google.com/file/d/1fHSIPI14A9GJhrFsSjlh8e2t06AECYAO/view?usp=sharing)
 
 ## [Preview Video](https://youtu.be/0odKe6elOLQ)
 
-**Current version:** `1.0`
+**Current version:** `1.1`
 
-**Based on the game version:** `U38 (Season 4) Patch 7`
+**Based on the game version:** `U38 (Season 4) Patch 10 (Maintenance Update)`
 
-**Based on the FSD-Template commit:** [U38P7](https://github.com/DRG-Modding/FSD-Template/commit/4b061ac1729be853146fe9fb5fa37167f0ab383d)
+**Based on the FSD-Template commit:** [U38P10](https://github.com/DRG-Modding/FSD-Template/commit/0da9e507ede3c5b71de929c1691337bd069a7a48)
 
 **Full opened project size:** `15GB`
 
 ## What is this for?
 
-This is for blueprint modding, when you are making a mod that needs to get references to various game assets. It completely removes the need to recreate any assets by hand which is usually very time consuming.
+The modkit is almost an exact mirror of DRG's original Unreal project without any of the code implementations. It is for:
+- Blueprint modding, when you are making a mod that needs to get references to various game assets
+- Animation modding, when you want to test out your animations on the skeletons/skeletal meshes already there
+- Skin/texture/material/model modding, for testing your assets on existing game assets and meshes in the editor
+- Map modding, for example editing the spacerig or making a new map using existing assets 
 
-Therefore, you need to know how to make BP mods in the first place, which you can find out more about in the [BP Modding guide](https://mod.io/g/drg/r/how-to-blueprint-mod).
+It completely removes the need to recreate any assets by hand which is usually very time consuming.
+
+You need to know how to make BP mods in the first place, which you can find out more about in the [BP Modding guide](https://mod.io/g/drg/r/how-to-blueprint-mod).
 
 ## Usage
 
@@ -37,6 +43,8 @@ Therefore, you need to know how to make BP mods in the first place, which you ca
 - `_ModHub` which is the latest version of the mod hub framework files
 
 ## UnrealLink
+
+While most people use Visual Studio for opening the project solution as it is free, there is also another option if you have access to it anyway. 
 
 The [Jetbrains Rider](https://www.jetbrains.com/rider/download) IDE has a special system called [Unreal Link](https://www.jetbrains.com/help/rider/Unreal_Engine__UnrealLink_RiderLink.html) that enables advanced integration between the IDE and the editor. Here's an example of what UnrealLink could look like if you use it:
 
@@ -72,10 +80,6 @@ Any C++ changes can be built like normal, just remember that there are now asset
 
 ![How to turn off post process material](https://cdn.discordapp.com/attachments/1109192354595876944/1151018604129701888/image.png)
 
-**Why is the drop pod so stretched and big in some of the reconstructed maps?**
-
-> There is currently a bug with components, causing the drop pod blueprint actor in particular to be stretched and big. The drop pod has been manually resized/repositioned in a couple of the levels, but a proper fix is being worked on.
-
 **Why can't I open particles or sound waves?**
 
 > These asset types are actually the cooked files copied directly from the unpacked game files, since they work just fine in-editor as references. Cooked files cannot be opened or saved in the editor.
@@ -99,71 +103,11 @@ There are a few files that are in the game content but are not in the modkit con
 - File media sources
 - Static mesh carvers (those that begin with `SMC_` in the unpacked files)
 
-As well as the following animations that fail to import due to having only one frame:
-
-```
-Content\Enemies\HydraWeed\Assets\ANIM_HydraWeed_Heart_Open.uasset
-Content\Enemies\HydraWeed\Assets\ANIM_HydraWeed_Hidden.uasset
-Content\Enemies\Jellyfish\Animations\BlendSpace\ANIM_Jelly_Fish_Idle_Pose.uasset
-Content\Enemies\Jelly_Breeder\Animations\ANIM_JellyBreeder_Idle_Frame.uasset
-Content\Enemies\MuleInfected\Animations\ANIM_InfectedMule_Body_Collapse_Idle.uasset
-Content\Enemies\RivalTech\PatrolBot\Animations\ANIM_PatrolBot_Rolling_Pose.uasset
-Content\Enemies\RivalTech\Shredder\Assets\ANIM_Shredder_OpenState.uasset
-Content\Enemies\Shark\Animations\ANIM_CaveShark_A_IdleFrame.uasset
-Content\Enemies\Shark\Animations\ANIM_CaveShark_A_Jump_Bend.uasset
-Content\Enemies\Shark\Animations\ANIM_CaveShark_A_Jump_Straight.uasset
-Content\Enemies\Spider\Animation\ANIM_Spider_Boss_Heavy_BackarmorClosed_A.uasset
-Content\Enemies\Spider\Animation\ANIM_Spider_Boss_Heavy_BackarmorOpen_A.uasset
-Content\Enemies\Spider\Animation\ANIM_Spider_Boss_Heavy_WeakspotsClosed_A.uasset
-Content\Enemies\Woodlouse\Animations\AimAssets\ANIM_WoodLouse_A_Look_Down_Frame.uasset
-Content\Enemies\Woodlouse\Animations\AimAssets\ANIM_WoodLouse_A_Look_Left_Down_Frame.uasset
-Content\Enemies\Woodlouse\Animations\AimAssets\ANIM_WoodLouse_A_Look_Left_Frame.uasset
-Content\Enemies\Woodlouse\Animations\AimAssets\ANIM_WoodLouse_A_Look_Left_Up_Frame.uasset
-Content\Enemies\Woodlouse\Animations\AimAssets\ANIM_WoodLouse_A_Look_Right_Down_Frame.uasset
-Content\Enemies\Woodlouse\Animations\AimAssets\ANIM_WoodLouse_A_Look_Right_Frame.uasset
-Content\Enemies\Woodlouse\Animations\AimAssets\ANIM_WoodLouse_A_Look_Right_Up_Frame.uasset
-Content\Enemies\Woodlouse\Animations\AimAssets\ANIM_WoodLouse_A_Look_Up_Frame.uasset
-Content\GameElements\Drone\Animations\ANIM_Drone_Combat_Idle.uasset
-Content\GameElements\GameEvents\AmberEvent\Models\ANIM_AmberEvent_Grinder_Folded_Idle.uasset
-Content\GameElements\GameEvents\GuntowerEvent\ANIM_GunTower_Base_Tower_Closed_Idle.uasset
-Content\GameElements\GameEvents\GuntowerEvent\GunTower_Module_AimingLMG\ANIM_GunTower_LMG_Closed.uasset
-Content\GameElements\GameEvents\GuntowerEvent\GunTower_Module_RadialFire\ANIM_GunTower_RadialFire_Closed_Idle.uasset
-Content\GameElements\GameEvents\GuntowerEvent\GunTower_Module_RadialFire\ANIM_GunTower_RadialFire_Open_Idle.uasset
-Content\GameElements\GameEvents\GuntowerEvent\GunTower_Module_RandomFire\ANIM_GunTower_RandomFire_Closed_Idle.uasset
-Content\GameElements\GameEvents\GuntowerEvent\GunTower_Module_RandomFire\ANIM_GunTower_RandomFire_Open_Idle.uasset
-Content\GameElements\GameEvents\PlagueMeteor\RockCrackerModels\ANIM_RockCracker_Closed.uasset
-Content\GameElements\GameEvents\RewardDispenser\EventButtons\ANIM_Event_StartButton01_Idle.uasset
-Content\GameElements\GameEvents\RockEnemies\Models\ANIM_RockEnemyEvent_PowerUpSprinkler_FoldOut_Idle.uasset
-Content\GameElements\Objectives\Facility\Caretaker\Body\ANIM_CaretakerBody_Open.uasset
-Content\GameElements\Objectives\Facility\DefenseTurret\Animations\ANIM_Gun_Turret_Close_Pose.uasset
-Content\GameElements\Objectives\Facility\DefenseTurret\Animations\ANIM_Gun_Turret_Open_Pose.uasset
-Content\GameElements\Objectives\Facility\DefenseTurret\Assets\ANIM_Gun_Turret_01_ClosedPose.uasset
-Content\GameElements\Objectives\Facility\DefenseTurret\Assets\ANIM_Sniper_Turret_01_InactivePose.uasset
-Content\GameElements\Objectives\Facility\DefenseTurret\Assets\ANIM_Sniper_Turret_01_OpenPose.uasset
-Content\GameElements\Objectives\Facility\DefensiveTentacles\Animations\ANIM_Defence_Tentacle_Head_Melee_Pose.uasset
-Content\GameElements\Objectives\Facility\DefensiveTentacles\Animations\ANIM_Defence_Tentacle_Head_Ranged_Attack_Idle_Pose.uasset
-Content\GameElements\Objectives\Facility\Tethers\Assets\ANIM_HackingPod_Base_Closed_Idle.uasset
-Content\GameElements\Objectives\Facility\Tethers\Assets\ANIM_HackingPod_NodeDispenser_ClosedFrame.uasset
-Content\GameElements\Objectives\Facility\Tethers\Assets\ANIM_HackingPod_NodeDispenser_NoTetherFrame.uasset
-Content\GameElements\Objectives\Facility\Tethers\Assets\ANIM_HackingPod_NodeDispenser_Open_Idle.uasset
-Content\GameElements\Objectives\Facility\Vault\ANIM_Vault_ClosedState.uasset
-Content\GameElements\Objectives\Facility\VaultShieldEmitter\ANIM_VaultShieldEmitter_Closed.uasset
-Content\GameElements\Objectives\HackBuilding\Assets\ANIM_ProspectorDataDeposit_Closed_Idle.uasset
-Content\LevelElements\Minehead\ANIM_Minehead02_Closed.uasset
-Content\LevelElements\Minehead\ANIM_Minehead02_Open.uasset
-Content\WeaponsNTools\CoilGun\Animation\FP_Pistol_CoilGun_A_Closed_Idle.uasset
-Content\WeaponsNTools\Extractor\Fuel_Cannister\ANIM_FuelCannister_B_NotShooting.uasset
-Content\WeaponsNTools\SupplyPod\Assets\SupplyPod_Barrel\ANIM_SupplyPod_Barrel_Dispenser_NoBarrelFrame.uasset
-```
-
 ## Known issues
 
 - Gameplay Tags in blueprints are all "None", so you will need to change those manually if you intend on using them as references
 - Animation sequences have no track data, so they won't play any sounds or particles
-- Some animations are missing as shown in the above list - there must be something wrong with the FBX export pipeline as these animations should not be invalid for just having one frame
-- Component hierarchies for some blueprints are incorrect, such as the droppod's root component being wrong - fix is currently in the works, and will change the dummy C++ classes
 - Some static meshs have the wrong material order - this may cause problems when merging static meshes together
-- Physics assets aren't generated with full properties - this has been noticed after modkit distribution and will be fixed in the next version
 
 ## Credits
 
