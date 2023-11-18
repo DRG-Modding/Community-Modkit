@@ -14,15 +14,17 @@
 
 ## What is this for?
 
-The modkit is almost an exact mirror of DRG's original Unreal project without any of the code implementations. It is for:
-- Blueprint modding, when you are making a mod that needs to get references to various game assets
+The modkit is almost an exact mirror of DRG's original Unreal project without any of the code implementations. It can be useful for:
+- Blueprint modding, when you are making a mod that needs to get references to various game assets or create new ones based off existing assets
 - Animation modding, when you want to test out your animations on the skeletons/skeletal meshes already there
 - Skin/texture/material/model modding, for testing your assets on existing game assets and meshes in the editor
-- Map modding, for example editing the spacerig or making a new map using existing assets 
+- Map modding, for example editing the spacerig or making a new map using existing DRG assets
 
-It completely removes the need to recreate any assets by hand which is usually very time consuming.
+With this modkit, you can make your own content inside of the editor in almost the same way Ghost Ship Games can when developing the game - minus the ability to test blueprint or map mods inside of the editor due to there being no code implementations.
 
-You need to know how to make BP mods in the first place, which you can find out more about in the [BP Modding guide](https://mod.io/g/drg/r/how-to-blueprint-mod).
+As an example, the [Mission Content Revise](https://mod.io/g/drg/m/massive-content-revise-testing) mod contains thousands of new and edited assets and would not be as good as it is today without the modkit.
+
+If you wish to use this modkit for learning or modding purposes, you __must__ have followed at *least* the [basic modding guide](https://mod.io/g/drg/r/drg-basic-modding-guide) first! If you are using this for blueprint modding, you __must__ have followed the [blueprint modding guide](https://mod.io/g/drg/r/how-to-blueprint-mod) too!
 
 ## Usage
 
@@ -31,7 +33,7 @@ You need to know how to make BP mods in the first place, which you can find out 
 2. Copy your mod files into the `Content` folder.
 
 3. Then:
-    - If you have no interest in looking through the source code, just open the `FSD.uproject`.
+    - If you have no interest in looking through the source code, just open the `FSD.uproject` (you need UE4.27 installed to open).
 
     - If you wish to look through the source code, you will need to generate the project files by right clicking the `FSD.uproject` file and selecting `Generate Visual Studio project files`, then open `FSD.sln` in your IDE.
 
