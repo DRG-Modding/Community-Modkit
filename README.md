@@ -50,7 +50,7 @@ While most people use Visual Studio for opening the project solution as it is fr
 
 The [Jetbrains Rider](https://www.jetbrains.com/rider/download) IDE has a special system called [Unreal Link](https://www.jetbrains.com/help/rider/Unreal_Engine__UnrealLink_RiderLink.html) that enables advanced integration between the IDE and the editor. Here's an example of what UnrealLink could look like if you use it:
 
-![Unreal Link Example](https://cdn.discordapp.com/attachments/1109192354595876944/1150799779316629635/image.png)
+![Unreal Link](https://github.com/DRG-Modding/Community-Modkit/assets/84156063/4443553a-c4a9-43d0-ba8b-5a2d86fb7511)
 
 You can also change your IDE inside of `Editor preferences` -> `Source code`. Then, when you click on the base class of an asset, it will open the C++ class in your IDE.
 
@@ -74,13 +74,13 @@ Any C++ changes can be built like normal, just remember that there are now asset
 >
 > By extension, because the particles are using these partially reconstructed materials, they too will look all weird.
 > 
-> However, you can manually "fix" a material in-editor if you know what it looks like in-game. There is a [mod](https://cdn.discordapp.com/attachments/709825862672973866/998271202546171955/MatTestMod.zip) that can help you with this by spawning a textured cube with every base material in the game.
+> However, you can manually "fix" a material in-editor if you know what it looks like in-game. There is a mod in the modkit files called `MapDumper` that can help you with this by spawning a textured cube with every base material in the game.
 
 **When I open a reconstructed map, why is it all black?**
 
 > You need to turn off post process material by going to `Show` -> `Post Processing` -> `Post Process Material` in the editor viewport.
 
-![How to turn off post process material](https://cdn.discordapp.com/attachments/1109192354595876944/1151018604129701888/image.png)
+![How to turn off post process material](https://github.com/DRG-Modding/Community-Modkit/assets/84156063/ea0dcd96-f66a-4910-b3d2-7e3f9261bb00)
 
 **Why can't I open particles or sound waves?**
 
